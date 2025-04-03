@@ -1,0 +1,29 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #181818;
+    padding: 5px;
+    color: aliceblue;
+    height: 80px;
+}
+
+ul{
+    list-style: none;
+    margin-right: 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+   
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+span{
+    margin-left: 23px;
+    color: blueviolet;
+}

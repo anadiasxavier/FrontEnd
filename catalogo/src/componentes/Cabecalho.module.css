@@ -1,0 +1,13 @@
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414;
+    height: 150px;
+}
+
+h1{
+    font-family: "Inter", sans-serif; 
+    font-size: 36px;
+    color:darkred;
+}
