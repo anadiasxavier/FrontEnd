@@ -2,12 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #141414;
-    height: 150px;
+    background-color: #0A2239;
+    height: 100px;
+    
 }
 
 h1{
-    font-family: "Inter", sans-serif; 
-    font-size: 36px;
-    color:darkred;
+    font-family: "Montserrat", sans-serif; 
+    font-size: 60px;
+    color:#62b7d6;
 }

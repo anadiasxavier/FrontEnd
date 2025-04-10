@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #181818;
+    background-color: #114d6d;
     padding: 5px;
-    color: aliceblue;
-    height: 80px;
+    height: 50px;
+  
 }
 
 ul{
@@ -14,16 +14,21 @@ ul{
     padding: 0px;
     display: flex;
     flex-direction: row;
+    display: inline-flex;
 }
 
 li{
-   
-    color: rgb(255, 255, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 30px;
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
     font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    gap: 5px;
+    display: flex;
 }
 
 span{
-    margin-left: 23px;
-    color: blueviolet;
+    margin-left: 1vh;
+    color: #b8e5f5;
 }

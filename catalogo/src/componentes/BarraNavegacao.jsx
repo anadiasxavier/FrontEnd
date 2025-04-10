@@ -18,8 +18,10 @@ export function BarraNavegacao(){
                     <span class="material-symbols-outlined">tv</span>
                     Filmes
                 </li>
+                <li>
                 <span class="material-symbols-outlined">person</span>
-                <li>Perfil</li>
+                Perfil
+                </li>
             </ul>
         </nav>
     )

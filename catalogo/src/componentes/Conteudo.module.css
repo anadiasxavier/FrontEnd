@@ -1,7 +1,13 @@
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #141414;
+    background-color: #0A2239;
     height: 95%;
+}
+
+h2{
+    color: antiquewhite;
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 150px;
+    padding-top: 4vh;
+    
 }

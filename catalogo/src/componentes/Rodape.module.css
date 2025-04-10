@@ -1,10 +1,10 @@
 .container{
-    background-color: #181818;
-    color: rgb(255, 255, 255);
+    background-color: #62b7d6;
+    color: #0A2239;
     justify-content: center;
     display:flex;
-    font-family: 'Times New Roman', Times, serif;
-    
+    font-family: "Montserrat", sans-serif;
+   
 
 }
 
