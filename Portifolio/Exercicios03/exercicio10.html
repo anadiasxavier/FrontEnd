@@ -1,0 +1,73 @@
+<!--  Calcular Imposto de Renda (Faixas): Calcule o imposto de renda com base em faixas salariais com arrow function.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Exercicio 10</title>
+</head>
+<body>
+     <!-- Iniciei realizando o html, definindo o titulo, a pergunta e também os inputs -->
+    <header>
+        <div class="titulo">
+            <h1>Exercise 10</h1>
+        </div>
+
+            <div class="voltar">
+                <a href="/exercicios3.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                    </svg>
+                    <p>Go back</p>
+                </a>
+            </div>
+    </header>
+    <main>
+        <div class="pergunta">
+            <p>Deseja calcular o seu imposto de renda?</p>
+        </div>
+
+        <div class="Inputs">
+            <input type="Number" id="salario" placeholder="Digite o seu salário:">
+        </div>
+    
+     <!-- Realizei um botão para chamar o resultado do js -->
+    <button onclick="calculo()">Calcular</button>
+
+    <div id="resultado"></div>
+    </main>
+    <script>
+        const calcularImposto = (salario) => {
+            if (salario <= 1903.98) {
+                return 0; 
+            } else if (salario <= 2826.65) {
+                return salario * 0.075 - 142.80;
+            } else if (salario <= 3751.05) {
+                return salario * 0.15 - 354.80;
+            } else if (salario <= 4664.68) {
+                return salario * 0.225 - 636.13;
+            } else {
+                return salario * 0.275 - 869.36;
+            }
+        };
+        
+
+        //Função calulo, para calcular o imposto, utilizei if e else if.
+        function calculo (){
+            let salario = parseFloat(document.getElementById("salario").value);
+
+            let imposto = calcularImposto(salario);
+
+            // exibe o resultado na tela
+            if(imposto == 0){
+               document.getElementById("resultado").innerHTML ="Você está isento de Imposto de Renda.";
+            }
+            else{
+               document.getElementById("resultado").innerHTML =`O imposto de renda para o seu salario é ${imposto.toFixed(2)}`;
+            }
+        }        
+    </script>
+</body>
+</html>

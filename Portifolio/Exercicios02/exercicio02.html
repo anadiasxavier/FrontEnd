@@ -1,0 +1,49 @@
+<!-- Exercico 02 - media de 8 números -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+   <title>Exercicio 02</title>
+</head>
+<body>
+  <header>
+    <!-- Iniciei realizando o html, definindo o titulo, a pergunta-->
+    <div class="titulo">
+     <h1>Exercise 02</h1>
+    </div>
+
+     <div class="voltar">
+        <a href="/exercicios2.html">
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+             </svg>
+             <p>Go back</p>
+         </a>
+     </div>
+  </header>
+
+  <main>
+     <div class="pergunta">
+           <p>Deseja descobrir o média de 8 números?</p>
+           <p>Os números são: 5, 10, 15, 20, 25, 30, 35 e 40.</p>
+     </div>
+     <!-- utilizei um id para chamar o resultado do script -->
+     <div id="resultado"></div> 
+  </main>
+
+    <script>
+        let numeros =[5, 10, 15, 20, 25, 30, 35, 40]
+        let somaTotal = 0;
+
+        for (let numero = 0; numero < numeros.length; numero++ ){
+            somaTotal += numeros[numero]; // utilizei o for para realizar a contgem e conseguir chegar na media dos numeros.
+        }
+
+        const media = somaTotal /numeros.length;
+        document.getElementById("resultado").innerHTML =`A média desses números são: ${media}`; //para fazer o resultado aparecer no html.
+    </script>
+</body>
+</html>

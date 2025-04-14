@@ -1,0 +1,33 @@
+img{
+    width: 600px;
+    margin-left: 1000px;
+    display: flex;
+    align-items: center;      
+    justify-content: center;
+    margin-top: -700px;  
+}
+
+.informacoesAna p{
+    font-size: 25px;
+    font-family: montserrat;
+    margin-inline-end: 800px;
+    margin-left: 300px;
+    margin-top: 200px;
+}
+
+.voltar a{
+    margin-left: 72px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    gap: 7px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+  
+}
+
+.voltar p{
+    font-family: inter;
+    transform: translateY(-3px);
+
+}

@@ -1,0 +1,76 @@
+<!-- Criar um programa que peça um valor e exiba quantas cédulas de R$200, R$100, R$50, R$20, R$10, R$5 e R$1 seriam necessárias para formar esse valor.​ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Exercicio 07</title>
+</head>
+<body>
+     <!-- Iniciei realizando o html, definindo o titulo, a pergunta e também os inputs -->
+    <header>
+        <div class="titulo">
+            <h1>Exercise 07</h1>
+        </div>
+
+            <div class="voltar">
+                <a href="/exercicios3.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                    </svg>
+                    <p>Go back</p>
+                </a>
+            </div>
+    </header>
+    <main>
+        <div class="pergunta">
+            <p>Deseja descobrir quantas cédulas seriam necessárias para tal valor?</p>
+        </div>
+
+        <div class="Inputs">
+            <input type="Number" id="valor" placeholder="Digite um valor:">
+        </div>
+    
+     <!-- Realizei um botão para chamar o resultado do js -->
+    <button onclick="calculo()">Calcular</button>
+
+    <div id="resultado"></div>
+    </main>
+    <script>
+        function calculo(){
+        let valor = Number(document.getElementById("valor").value);
+
+        //Os calculos das celulas foi feito com o Math.floor, (tive que pesquisar um pouco sobre o floor para entender melhor)
+        let cedu200 = Math.floor(valor/200);
+        valor %= 200;
+        let cedu100 = Math.floor(valor / 100);
+        valor %= 100;
+        let cedu50 = Math.floor(valor / 50);
+        valor %= 50;
+        let cedu20 = Math.floor(valor / 20);
+        valor %= 20;
+        let cedu10 = Math.floor(valor / 10);
+        valor %= 10;
+        let cedu5 = Math.floor(valor / 5);
+        valor %= 5;
+        let cedu1 = valor;
+
+        //imprime na tela o resultado das cedulas necessarias
+        let resultado = "";
+
+        if (cedu200 > 0) resultado += `${cedu200} cédula(s) de R$200<br>`;
+        if (cedu100 > 0) resultado += `${cedu100} cédula(s) de R$100<br>`;
+        if (cedu50 > 0) resultado += `${cedu50} cédula(s) de R$50<br>`;
+        if (cedu20 > 0) resultado += `${cedu20} cédula(s) de R$20<br>`;
+        if (cedu10 > 0) resultado += `${cedu10} cédula(s) de R$10<br>`;
+        if (cedu5 > 0) resultado += `${cedu5} cédula(s) de R$5<br>`;
+        if (cedu1 > 0) resultado += `${cedu1} cédula(s) de R$1<br>`;
+    
+        
+        document.getElementById("resultado").innerHTML = `Cédulas necessárias:<br>${resultado}`;//para fazer o resultado aparecer no html.
+        }
+    </script>
+</body>
+</html>

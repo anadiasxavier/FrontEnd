@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: var(--cor-principal);
+}
+
+@font-face{
+    font-family: montserrat;
+    src: url(../fontes/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face{
+    font-family: miroles;
+    src: url(../fontes/MIROLES.ttf);
+}
+
+@font-face{
+    font-family: inter;
+    src: url(../fontes/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+:root{
+    --cor-principal:#efefe7;
+    --cor-secundaria:#4F4343;
+    --cor-01: #817070;
+    --cor-02: #d7d3c8;
+}
+
+.titulo h1{
+    font-family: miroles;
+    font-weight: normal;
+    font-size: 96px;
+    margin-top: 65px;
+    margin-left: 72px;
+    margin-bottom: 45px;
+    color: var(--cor-secundaria);
+}
+
+footer p{
+    font-family: inter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+   
+    
+}
+
+.voltar a{
+    margin-left: 72px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    gap: 7px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+  
+}
+
+.voltar p{
+    font-family: inter;
+    transform: translateY(-3px);
+
+
+}

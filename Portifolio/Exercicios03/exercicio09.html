@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Exercicio 09</title>
+</head>
+<body>
+     <!-- Iniciei realizando o html, definindo o titulo, a pergunta e também os inputs -->
+    <header>
+        <div class="titulo">
+            <h1>Exercise 09</h1>
+        </div>
+
+            <div class="voltar">
+                <a href="/exercicios3.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                    </svg>
+                    <p>Go back</p>
+                </a>
+            </div>
+    </header>
+    <main>
+        <div class="pergunta">
+            <p>Deseja responder o nosso formulario?</p>
+        </div>
+    <!-- Coloquei input para o usuario digitar os dados -->
+    <input type="text" id="nome" placeholder="Digite o seu nome: ">
+    <input type="text" id="endereco" placeholder="Digite o seu endereço: ">
+    <input type="number" id="numero" placeholder="Digite o seu telefone: ">
+    <input type="number" id="celular" placeholder="Digite o seu celular: ">
+    <input type="text" id="email" placeholder="Digite o seu email: ">
+
+    <!-- Realizei uma div para o usuario informar o seu genero, utilizando o input -->
+    <div class="genero">
+        <label for="genero1" id="nomeGenero">Escolha o seu genero:</label>
+        <input type="radio" id="masc" name="genero" value="Masculino">
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="femi" name="genero" value="Femenino">
+        <label for="femenino">Femenino</label>
+    </div>
+
+    <!-- Botão para realizar a verificação -->
+    <button onclick="verificacao()">Enviar</button>
+    </main>
+    <script>
+        // Realizei um função para verificar se os campos estão todos preenchidos
+        function verificacao(){
+            let nome = document.getElementById("nome").value;
+            let endereco = document.getElementById("endereco").value;
+            let numero = document.getElementById("numero").value;
+            let celular = document.getElementById("celular").value;
+            let email = document.getElementById("email").value;
+
+            if (!nome || !endereco || !numero || !celular || !email){
+                alert("Preencha os campos!")
+            }
+            else{
+                alert("Formulario enviado!")
+            }
+        }
+    </script>
+
+</body>
+</html>

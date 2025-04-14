@@ -1,0 +1,58 @@
+<!-- ano bissexto -->
+ <!-- Tive que utilizar função nesses primeiros exercicios, pois eu achei mais facil para chamar a função pelo botão no html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    <header>
+     <!-- Iniciei realizando o html, definindo o titulo, a perginta e também os inputs -->
+    <div class="titulo">
+        <h1>Exercise 08</h1>
+    </div>
+
+        <div class="voltar">
+            <a href="/exercicios1.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg>
+                <p>Go back</p>
+            </a>
+        </div>
+    </header>
+    <main>
+    <div class="pergunta">
+        <p>Deseja descobrir se o ano é bissexto?</p>
+    </div>
+
+    <div class="Inputs">
+        <input type="Number" id="ano" placeholder="Digite um ano: ">
+    
+    </div>
+
+     <!-- Realizei um botão para chamar o resultado do js -->
+    <button onclick="verificar()">Calcular</button>
+
+    <div id="resultado"></div>
+    </main>
+    <script>
+        function verificar(){
+        let ano = Number(document.getElementById("ano").value);
+        
+        //if e else para realizar a verificacao
+        if(ano %4 ==0){
+            document.getElementById("resultado").innerHTML= `O ano é bissexto.`
+        }
+        else{
+            document.getElementById("resultado").innerHTML=`Esse ano não é bissexto.`;
+        }
+        }
+    </script>
+    
+ </body>
+ </html>

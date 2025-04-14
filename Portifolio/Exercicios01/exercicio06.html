@@ -1,0 +1,63 @@
+<!-- Exercicio verificar se a nota está acima da média  ou se é par-->
+<!-- Tive que utilizar função nesses primeiros exercicios, pois eu achei mais facil para chamar a função pelo botão no html -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Exercicio 06</title>
+</head>
+<body>
+  <header>
+     <!-- Iniciei realizando o html, definindo o titulo, a perginta e também os inputs -->
+    <div class="titulo">
+        <h1>Exercise 06</h1>
+    </div>
+
+        <div class="voltar">
+          <a href="/exercicios1.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                </svg>
+                <p>Go back</p>
+            </a>
+        </div>
+      </header>
+      <main>
+      <div class="pergunta">
+          <p>Deseja descobrir se a sua nota é acima da média? e se ela é par?</p>
+      </div>
+  
+      <div class="Inputs">
+          <input type="Number" id="media" placeholder="Qual é a média necessária? ">
+          <input type="Number" id="nota1" placeholder="Digite sua primeira nota:">
+          <input type="Number" id="nota2" placeholder="Digite sua segunda nota:">
+      </div>
+  
+       <!-- Realizei um botão para chamar o resultado do js -->
+      <button onclick="calculo()">Calcular</button>
+  
+      <div id="resultado"></div>
+    </main>
+    <script>
+      function calculo(){
+      let media = Number(document.getElementById("media").value);
+      let nota1 = Number(document.getElementById("nota1").value);
+      let nota2 = Number(document.getElementById("nota2").value);
+      const resultado = document.getElementById("resultado");
+      let mediaAluno = (nota1 + nota2)/2
+
+      if (mediaAluno> media && mediaAluno%2 == 0){
+        resultado.textContent= `A media da sua nota está acima da média e é um número par`;     
+      }
+      else{
+        resultado.textContent= `A sua média não é número par, ou não está acima da média desejada.`;
+      }
+    }
+      
+    </script>
+    
+ </body>
+ </html>

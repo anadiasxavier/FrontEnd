@@ -1,0 +1,23 @@
+.escrita h4{
+    font-family: montserrat; 
+    margin-left: 70px;
+    margin-top: 30px;
+    font-size: 28px;
+    color: var(--cor-secundaria);
+}
+
+.escrita p{
+    font-family: montserrat; 
+    margin-left: 70px;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-inline-end:65vh;
+    color: var(--cor-secundaria);
+    margin-bottom: 50px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+
+}

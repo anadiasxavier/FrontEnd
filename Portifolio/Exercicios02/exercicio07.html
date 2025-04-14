@@ -1,0 +1,66 @@
+<!-- O mesmo que o anterior, porém com numero de tentativa -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/styles/exercicio01.css">
+    <link rel="stylesheet" href="/styles/global.css">
+   <title>Exercicio 07</title>
+</head>
+<body>
+  <header>
+    <!-- Iniciei realizando o html, definindo o titulo, a pergunta -->
+    <div class="titulo">
+     <h1>Exercise 07</h1>
+    </div>
+
+     <div class="voltar">
+        <a href="/exercicios2.html">
+             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+             </svg>
+             <p>Go back</p>
+         </a>
+     </div>
+  </header>
+
+  <main>
+     <div class="pergunta">
+           <p>Deseja encontrar esse nome na lista?</p>
+         
+     </div>
+     <!-- utilizei um id para chamar o resultado do script -->
+     <div id="resultado"></div> 
+  </main>
+    <script>
+      
+        let nomes = ["Luana", "Ana" , "Giovana", "Maria" , "Fernanda", "Clara", "Isadora", "Jenifer", "Carol", "Dias", "Xavier"];
+      
+       
+
+        let maximoTentativa = 5; //numeros de tentativas
+
+        for(let tentativa = 1; tentativa <= maximoTentativa; tentativa++){
+            let nome = String(prompt(`Escreva um nome:`))
+            nome = nome.toLowerCase(); //caso o nome esteja com letra minuscula ou maiuscula
+
+            let encontrar = nomes.findIndex(function(elemento){
+                return elemento.toLowerCase() === nome;
+            });
+
+            //if e else para enviar resposta ao usuario
+            if (encontrar !== -1){
+                document.getElementById("resultado").innerHTML =`Nome encontrado na posição:  ${encontrar},  o número de tentativa foi ${tentativa}`;
+                break;
+            } else if (tentativa === maximoTentativa) {
+                document.getElementById("resultado").innerHTML =`Nome não encontrado na lista.`;//para fazer o resultado aparecer no html.
+            }
+        
+        }
+
+
+    </script>
+</body>
+</html>
