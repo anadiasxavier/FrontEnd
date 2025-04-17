@@ -1,0 +1,38 @@
+.conteiner{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3 ease;
+    color: #dbf2fa;
+    background-color: #114d6d;
+
+    
+}
+
+figure{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 20px;
+
+}
+
+
+.conteiner img {
+    width: 200px;
+    height: 300px;
+    margin-left: 40px;
+}
+
+.conteiner h3{
+    font-family: "Montserrat", sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}

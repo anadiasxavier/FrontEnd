@@ -5,7 +5,6 @@
     background-color: #114d6d;
     padding: 5px;
     height: 50px;
-  
 }
 
 ul{
@@ -15,6 +14,7 @@ ul{
     display: flex;
     flex-direction: row;
     display: inline-flex;
+   
 }
 
 li{
@@ -26,9 +26,14 @@ li{
     align-items: center;
     gap: 5px;
     display: flex;
+   
 }
 
 span{
     margin-left: 1vh;
     color: #b8e5f5;
+}
+
+.link{
+    text-decoration: none;
 }

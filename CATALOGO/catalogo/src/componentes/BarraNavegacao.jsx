@@ -1,6 +1,6 @@
 import estilos from'./BarraNavegacao.module.css';
-
-//AS FONTES PODE COLOCAR NO ASSETS E AS IMAGENS TAMBEM
+import { Link } from 'react-router-dom';
+//AS FONTES PODE COLOCAR NO ASSETS E AS IMAGENS TAMBEM, pode criar pastas lá.
 
 //estutura 
 // O nome da função deve ser o mesmo do arquivo
@@ -10,18 +10,25 @@ export function BarraNavegacao(){
     return(
         <nav className={estilos.conteiner}>
             <ul>
+                <Link className={estilos.link} to='/'>
                 <li>
                     <span class="material-symbols-outlined">home</span>
                     Home
                 </li>
+                </Link>
+                {/* O series tem que ser o mesmo nome da Rotas */}
+                <Link className={estilos.link} to='series'> 
                 <li>
                     <span class="material-symbols-outlined">tv</span>
-                    Filmes
+                    Séries
                 </li>
+                </Link>
+                <Link className={estilos.link} to='perfil'>
                 <li>
                 <span class="material-symbols-outlined">person</span>
                 Perfil
                 </li>
+                </Link>
             </ul>
         </nav>
     )

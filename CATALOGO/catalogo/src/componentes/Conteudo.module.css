@@ -1,0 +1,12 @@
+.container{
+   background-color: #acccd8; 
+    height: 95%;
+}
+
+.container h2{
+    color: #114d6d;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 150px;
+    padding-top: 4vh;
+    
+}
