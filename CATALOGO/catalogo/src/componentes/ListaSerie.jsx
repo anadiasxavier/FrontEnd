@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import { CardSerie } from './CardSerie';
 import { ModalSerie } from './ModalSerie';
 import estilos from './Lista.module.css';
+import { Conteudo } from "./Conteudo";
 
 const API_key = 'af26cce282aecf5c6cc39a264f29d0a7';
 const API_URL = 'https://api.themoviedb.org/3';
@@ -31,6 +32,8 @@ export function ListaSerie() {
     }
 
     return(
+        <>
+        <Conteudo/>
         <div className={estilos.conteiner}> 
             <figure>
                 {series.map(serie=>(
@@ -42,6 +45,7 @@ export function ListaSerie() {
             </figure>
             {selectedSerie &&(<ModalSerie serie={selectedSerie} onClose={handleCloseModal}/>)}
         </div>
+        </>
     )
 
 }

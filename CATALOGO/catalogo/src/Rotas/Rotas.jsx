@@ -3,7 +3,8 @@ import { Inicial } from "../Paginas/Inicial";
 import { Perfil } from "../Paginas/Perfil";
 import { ListaSerie } from '../componentes/ListaSerie';
 import {Lista} from "../componentes/Lista";
-import {Rodape} from "../componentes/Rodape"
+import {Rodape} from "../componentes/Rodape";
+
 
 
 export function Rotas(){

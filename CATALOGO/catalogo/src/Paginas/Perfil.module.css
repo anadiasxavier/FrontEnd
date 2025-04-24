@@ -1,13 +1,86 @@
 .container{
-    background-color: #0A2239;
+    
     height: 95%;
 }
 
+main{
+    background-color: #114d6d;
+}
 h2{
-    color: antiquewhite;
+ 
     color: #b8e5f5;
     font-family: "Montserrat", sans-serif;
     margin-left: 150px;
     padding-top: 4vh;
     
+}
+
+.conteudo{
+   margin-left: 50vh;
+    margin-top: 50px;
+    background-color: #1a668f;
+    width: 110vh;
+    height: 130vh;
+    border-radius: 10px;
+}
+
+.tituloUser{
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 45px;
+    margin-left: 40px;
+    padding-top:100px ;
+    
+}
+
+.respostas{
+    color: #ffff;
+    font-family: "Montserrat", sans-serif; 
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.subtitulo{
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.imgUser{
+    margin-left: 75vh;
+    transform: translateY(-25vh);
+    width: 260px;
+}
+
+.tituloSerie{
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    justify-content: center;
+    display: flex;
+    margin-top: -17vh;  
+}
+
+.series li{
+    margin-top: 5vh;
+    margin-left: 95px;
+    gap: 45px;
+}
+
+.titulofilme{
+    color: #b8e5f5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    justify-content: center;
+    display: flex;
+    margin-top: 5vh;
+}
+
+.filmes li{
+    margin-top: 5vh;
+    margin-left: 95px;
+    gap: 45px;
 }

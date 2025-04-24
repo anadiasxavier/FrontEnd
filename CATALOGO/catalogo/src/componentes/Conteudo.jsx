@@ -5,7 +5,7 @@ export function Conteudo(){
     return(
         
         <main className={estilos.container}>
-              <h2>Os Melhores filmes você encontra aqui! </h2>
+                <h2>Os Melhores filmes e Séries você encontra aqui! </h2>
             
         </main>
     )

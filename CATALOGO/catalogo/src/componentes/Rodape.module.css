@@ -1,13 +1,13 @@
 .container{
-    background-color: #62b7d6;
-    color: #0A2239;
-    justify-content: center;
-    display:flex;
-    font-family: "Montserrat", sans-serif;
-   
-
+    background-color: #114d6d;
+    padding-top: 30px ;
 }
 
-
+.container p{
+    font-family: "Montserrat", sans-serif;
+    color: #b8e5f5;
+    justify-content: center;
+    display:flex;
+}
 
 
