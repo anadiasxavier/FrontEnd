@@ -1,8 +1,10 @@
+/* container principal */
 .container{
     background-color: #114d6d;
     padding-top: 30px ;
 }
 
+/* texto */
 .container p{
     font-family: "Montserrat", sans-serif;
     color: #b8e5f5;

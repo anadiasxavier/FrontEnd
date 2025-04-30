@@ -1,3 +1,4 @@
+//imports da pagina
 import estilo from'./Perfil.module.css';
 import  Ana  from '../assets/img1.png';
 import img1 from '../assets/imgSerie1.png';
@@ -17,6 +18,7 @@ export function Perfil(){
             <h2 className={estilo.h2}>Meu Perfil</h2>
 
             <section className={estilo.conteudo}>
+                {/* informacoes do usuario */}
                 <div className='InformacoesUser'>
                     <h3 className={estilo.tituloUser}>Ana Clara Xavier</h3>
                     <p className={estilo.respostas}>Critico filmes como se tivesse estudado cinema em Harvard</p>
@@ -26,7 +28,7 @@ export function Perfil(){
                     <p className={estilo.respostas}>anaclaraxavier@gmail.com</p>
                     <img className={estilo.imgUser} src={Ana} alt="Imagem da Ana" />
                  </div>
-
+                {/* series faavoritas */}
                  <div className={estilo.series}>
                     <h4 className={estilo.tituloSerie}>Séries Favoritas</h4>
                      <li>
@@ -37,7 +39,7 @@ export function Perfil(){
                     </li>
                  </div>
 
-                 
+                {/* filmes favoritos */}
                  <div className={estilo.filmes}>
                     <h4 className={estilo.titulofilme}>Filmes Favoritas</h4>
                      <li>

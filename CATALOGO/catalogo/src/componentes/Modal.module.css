@@ -1,3 +1,6 @@
+/* CSS MODAL */
+
+/* Fundo escuro atrás do modal */
 .modalback{
     position: fixed;
     top: 0;
@@ -11,6 +14,7 @@
     background-color: rgba(33, 95, 129, 0.452);
 }
 
+/* conteiner principal */
 .modalConteiner{
     background-color: #0A2239;
     padding: 20px;
@@ -25,6 +29,7 @@
     position: relative;
 }
 
+/* Cabecalho do modal */
 .ModalHeader{
     display: flex;
     justify-content: space-between;
@@ -32,6 +37,7 @@
     margin-bottom: 15px;
 }
 
+/* titulo */
 .ModalHeader h2{
     color:#b8e5f5;
     text-align: center;
@@ -39,10 +45,12 @@
     font-size: 30px;
 }
 
+/* imagem e mais detalhes */
 .imgDetalhes{
     display: flex;
     gap: 20px;
 }
+/* Imagem */
 .imgModal{
     width: 40%;
     max-width: 300px;
@@ -50,6 +58,7 @@
     border-radius: 15px;
 }
 
+/* escrita */
 .movieDetails{
     flex:1;
     display: flex;
@@ -57,6 +66,7 @@
 
 }
 
+/* Botao para fechar */
 button{
     background-color: #247099;
     border-radius: 10px;

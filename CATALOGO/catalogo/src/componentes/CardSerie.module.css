@@ -1,3 +1,4 @@
+/* CSS CARD  Filme*/
 .conteiner{
     position: relative;
     width: 280px;
@@ -11,6 +12,7 @@
 
     
 }
+/* todos os cards */
 
 figure{
     display: flex;
@@ -20,13 +22,14 @@ figure{
 
 }
 
-
+/* imagem do card */
 .conteiner img {
     width: 200px;
     height: 300px;
     margin-left: 40px;
 }
 
+/* titulo */
 .conteiner h3{
     font-family: "Montserrat", sans-serif;
     align-items: center;
