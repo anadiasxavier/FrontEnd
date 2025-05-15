@@ -1,0 +1,25 @@
+.conteiner{
+    background-color: #393874;
+    height: 100px;
+}
+
+
+.logo{
+    margin-left: 96px;
+    margin-top: 5.6px;
+}
+
+.links ul {
+    font-family:"Inter", sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    margin-left: 130vh;
+}
+.links li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+/* .conteiner{
+    display: flex;
+    justify-content: center;
+    background-color:#393874;
+    height: 40px;
+}
+
+ul{
+    list-style: none;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li a.active{
+    color: rgb(138, 76, 97);
+    text-decoration: none;
+} */
