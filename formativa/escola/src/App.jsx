@@ -1,16 +1,10 @@
-import { BarraNavegacao } from "./Componentes/BarraNavegacao";
-import { Cabecalho } from "./Componentes/Cabecalho";
-import { Conteudo } from "./Componentes/Conteudo";
+import { Inicial } from './Paginas/Inicial';
 
 function App() {
  
 
   return (
-    <>
-      <Cabecalho/>
-      
-      <Conteudo/>
-    </>
+   <Inicial/>
   )
 }
 

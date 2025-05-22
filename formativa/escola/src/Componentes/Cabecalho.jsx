@@ -2,7 +2,7 @@ import estilos from './Cabecalho.module.css';
 import logo from '../assets/logo.png';
 export function Cabecalho(){
     return(
-        <header className={estilos.conteiner}>
+        <header className={estilos.conteinerHeader}>
             <img className={estilos.logo} src={logo}/>
 
             <div className={estilos.links}>
