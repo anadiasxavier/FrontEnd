@@ -3,7 +3,7 @@ import { Menu } from './Menu';
 
 export function Conteudo(){
     return(
-        <main className={estilos.conteiner}>
+        <main className={estilos.conteinerConteudo}>
             <Menu/>
         </main>
     )
