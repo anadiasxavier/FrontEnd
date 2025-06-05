@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-table{
+.tableMenu{
     width: 700px;
     height: 500px;
     background-color: #393874a4;
@@ -16,15 +16,15 @@ table{
     border: 9px solid rgb(255, 255, 255);
 }
 
-td{
+.tdMenu{
     text-align: center;
 }
 
-td img{
+.tdMenu img{
     margin-bottom: 5px;
 }
 
-td label{
+.tdMenu label{
     display: block;
     margin-top: 5px;
     color: rgb(255, 255, 255);
