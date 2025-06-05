@@ -1,29 +1,28 @@
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import axios from 'axios';
+import { axios } from 'axios';
 import { useState, useEffect } from 'react';
-
 
 const schemaDisciplinas = z.object({
     nome: z.string()
-        .min(1, 'Informe um nome')
+        .min(1,'Informe seu nome!')
         .max(100, 'Informe no maximo 100 caracteres'),
     curso: z.string()
-        .min(1, 'Informe o curso')
-        .max(255, 'Informe no maximo 255 carcteres'),
-    carga_hora: z.number(
-        {invalid_type_error: 'Informe uma carga horaria'})
-        .int ("Digite um valor inteiro")
-        .min(1,'Informe um valor')
-        .max(260, 'IA cargahoraia maxima é de 260h'),
+        .min(1, 'informe o curso!')
+        .max(100, 'Informe no maximo 100 caracteres'),
+    carga_horaria: z.ZodNumber(
+        {invalid_type_error: 'informe uma carga horaria'})
+        .int("digite um valor inteiro")
+        .min(1, 'informe um valor')
+        .max(260, 'carga horaria maxima de 260h'),
     descricao: z.string()
-        .min(1, 'Informe a descrição')
-        .max(255, 'Informe no maximo 255 caracteres'),
-    professor: z.number(
-        {invalid_type_error: 'Selecione um professor'})
-        .min(1, 'selecione um professor')
-})
+        .min(1, 'informe a descrição')
+        .max(255, ' informe no maximo  255 caracteres'),
+    professor: z.string(
+        {invalid_type_error: 'selecione um professor!'})
+        .min(1, "selecione um professor")
+});
 
 export function DisciplinaCadastrar(){
     const [professores, setprofessores] = useState([]);
@@ -39,37 +38,39 @@ export function DisciplinaCadastrar(){
         async function buscarProfessores() {
             try{
                 const token = localStorage.getItem('access_token')
-                const response = await axios.get('https://127.0.0.1:8000/api/professores',{
+                const response = await axios.get('http://127.0.0.1:8000/api/usuario/', {
                     headers:{
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                setprofessores(response.data);
+                    setprofessores(response.data);
             }catch(error){
                 console.error("erro", error);
-            }
+            } 
         }
-        buscarProfessores();
+        buscarProfessores()
+    },[])
 
-    }, []);
-    async function obterDadosFormulario(data){
+    async function obterDadosFormulario(data) {
         console.log("dados do formulario", data);
+
         try{
-            const token = localStorage.getItem('access-token');
-            const resonse = await axios.post(
-                'http://1227.0.0.1:8000/api/disciplinas/',
-            data,{
-                headers:{
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json'
+            const token = localStorage.getItem('access_token');
+            const response = await axios.post(
+                'http://127.0.0.1:8000/api/disciplinas/',
+                data,{
+                    headers:{
+                        'Authorization': `Bearer ${token}`,
+                        'Content-type': 'application/json'
+                    }
                 }
-            }
             );
-            alert("Disciplina cadastrada com sucesso");
-            resizeTo();
-        
+            alert("Disciplina cadastrada com sucesso!")
+            reset();
         }catch(error){
             console.error("erro", error)
-            alert ("Erro ao cadastrar")
+            alert("erro ao cadastrar")
         }
+        
     }
+}
