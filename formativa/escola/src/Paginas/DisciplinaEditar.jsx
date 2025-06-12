@@ -145,7 +145,7 @@ export function DisciplinaEditar() {
                         <option  value="">Selecione um professor</option>
                         {professores.map((prof) => (
                             <option className={estilos.inputField} key={prof.id} value={prof.id}>
-                                {prof.first_name} {prof.last_name}
+                                {prof.username}
                             </option>
                         ))}
                     </select>

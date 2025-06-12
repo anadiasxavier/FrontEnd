@@ -27,7 +27,7 @@ const schemaDisciplinas = z.object({
     .min(1)
 });
 
-export function DisciplinaCadastrar(){
+export function DisciplinarCadastrar(){
     const [professores, setprofessores] = useState([]);
     const{
         register,
@@ -47,7 +47,8 @@ export function DisciplinaCadastrar(){
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                    setprofessores(response.data);
+                const professoresFiltrados = response.data.filter(user => user.tipo === 'P');
+                setprofessores(professoresFiltrados);
             }catch(error){
                 console.error("erro", error);
             } 
@@ -69,7 +70,7 @@ export function DisciplinaCadastrar(){
                     }
                 }
             );
-console.log('Disciplina cadastrado com sucesso!', response.data);
+            console.log('Disciplina cadastrado com sucesso!', response.data);
             alert('Disciplina cadastrado com sucesso!');
             reset();
  
