@@ -1,77 +1,91 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import  axios  from 'axios';
-import { useState, useEffect } from 'react';
+import axios from 'axios';
 import estilos from './Cadastrar.module.css';
-
-const schemaDisciplinas = z.object({
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+ 
+const schemaDisciplina = z.object({
     nome: z.string()
-        .min(1,'Informe seu nome!')
-        .max(100, 'Informe no maximo 100 caracteres'),
+        .min(1, 'Informe ao menos um caractere')
+        .max(100, 'Informe até 100 caracteres'),
     curso: z.string()
-        .min(1, 'informe o curso!')
-        .max(100, 'Informe no maximo 100 caracteres'),
-    carga_hora: z.number({ invalid_type_error: 'Informe uma carga horária' })
-        .int('Digite um valor inteiro')
-        .min(1, 'Informe um valor')
-        .max(260, 'Carga horária máxima de 260h'),
+        .min(1, 'Informe ao menos um caractere')
+        .max(100, 'Informe até 100 caracteres'),
+    carga_hora: z.number({
+        invalid_type_error: 'Informe a cargahorária'})
+        .int("Deve ser um número inteiro")
+        .min(1, "A carga horária mínima é 1 hora")
+        .max(260, "A carga horária máxima é 260 horas"),
     descricao: z.string()
-        .min(1, 'informe a descrição')
-        .max(255, ' informe no maximo  255 caracteres'),
-    // professor: z.string(
-    //     {invalid_type_error: 'selecione um professor!'})
-    //     .min(1, "selecione um professor")
-    professor: z.number({ invalid_type_error: 'selecione um professor!' })
-    .int()
-    .min(1)
+        .min(1, 'Informe ao menos um caractere')
+        .max(300, 'Informe até 300 caracteres'),
+    professor: z.number({
+        invalid_type_error: 'Selecione um professor'
+    }).min(1, 'Selecione um professor')
 });
-
-export function DisciplinaCadastrar(){
-    const [professores, setprofessores] = useState([]);
-    const{
+ 
+export function DisciplinaEditar() {
+ 
+    const [professores, setProfessores] = useState([]);
+    const { id } = useParams();
+    const navigate = useNavigate();
+ 
+    const {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
-    } = useForm ({
-        resolver: zodResolver(schemaDisciplinas)
+        reset
+    } = useForm({
+        resolver: zodResolver(schemaDisciplina)
     });
-
-    useEffect(()=>{
+ 
+    useEffect(() => {
         async function buscarProfessores() {
-            try{
-                const token = localStorage.getItem('access_token')
+            try {
+                const token = localStorage.getItem('access_token');
                 const response = await axios.get('http://127.0.0.1:8000/api/usuario/', {
-                    headers:{
+                    headers: {
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                    setprofessores(response.data);
-            }catch(error){
-                console.error("erro", error);
-            } 
+                setProfessores(response.data);
+                //Preenche o formulários com os dados do registro do ID
+                 const resDisciplina = await axios.get(`http://127.0.0.1:8000/api/disciplinas/${id}/`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+ 
+                // Preenche o formulário
+                reset(resDisciplina.data);
+ 
+            } catch (error) {
+                console.error("Erro ao carregar professores", error);
+            }
         }
-        buscarProfessores()
-    },[])
-
+        buscarProfessores();
+    }, []);
+ 
     async function obterDadosFormulario(data) {
-        console.log("dados do formulario", data);
-
-        try{
+      console.log("Dados do formulário:", data);
+        try {
             const token = localStorage.getItem('access_token');
-            const response = await axios.post(
-                'http://127.0.0.1:8000/api/disciplinas/',
-                data,{
-                    headers:{
+ 
+            const response = await axios.put(
+                `http://127.0.0.1:8000/api/disciplinas/${id}/`,
+                data,
+                {
+                    headers: {
                         'Authorization': `Bearer ${token}`,
-                        'Content-type': 'application/json'
+                        'Content-Type': 'application/json'
                     }
                 }
             );
-console.log('Disciplina cadastrado com sucesso!', response.data);
+ 
+            console.log('Disciplina cadastrado com sucesso!', response.data);
             alert('Disciplina cadastrado com sucesso!');
             reset();
+            navigate('/inicial/disciplina');
  
         } catch (error) {
             console.error('Erro ao cadastrar disciplina', error);
@@ -131,7 +145,7 @@ console.log('Disciplina cadastrado com sucesso!', response.data);
                         <option  value="">Selecione um professor</option>
                         {professores.map((prof) => (
                             <option className={estilos.inputField} key={prof.id} value={prof.id}>
-                                {prof.username}
+                                {prof.first_name} {prof.last_name}
                             </option>
                         ))}
                     </select>
