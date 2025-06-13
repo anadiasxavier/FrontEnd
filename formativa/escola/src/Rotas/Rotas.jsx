@@ -7,25 +7,30 @@ import { DisciplinaTeste } from "../Paginas/DisciplinaTeste";
 import { DisciplinarCadastrar } from "../Paginas/DisciplinarCadastrar";
 import { DisciplinaEditar } from "../Paginas/DisciplinaEditar";
 import { Professores } from "../Paginas/Professores";
+import { ProfessoresCadastrar } from "../Paginas/ProfessoresCadastrar";
 
 export function Rotas() {
   return (
     <Routes>
+      {/* Login */}
       <Route path="/" element={<Login />} />
-      <Route path="/Inicial" element={<Inicial />} >
+      {/* Inicio */}
+      <Route path="/Inicial" element={<Inicial />} >.
         <Route index element={<Menu />} />
         <Route path="discProfessor" element={<DisciplinasProfessor />} />
 
+        {/* disciplina */}
         <Route path = 'disciplina'>
             <Route index element ={<DisciplinaTeste />} />
             <Route path="cadastroDisciplina" element={<DisciplinarCadastrar />} />
             <Route path="Editar/:id" element={<DisciplinaEditar/>} />
         </Route>
-        {/* <Route path = 'disciplina/cadastroDisciplina' element={<DisciplinaCadastrar/>}/>
-        <Route path = 'disciplina/cadastroEditar' element={<DisciplinaEditar/>}/> */}
 
+        {/* Professor */}
         <Route path="professor">  
           <Route index element ={<Professores/>}/>
+            <Route path="cadastroProfessores" element={<ProfessoresCadastrar/>}/>
+          
         </Route>
       
       </Route>

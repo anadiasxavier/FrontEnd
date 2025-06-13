@@ -31,7 +31,7 @@ export function Professores() {
  
   //Função de exclusão do professor
  const handleDelete = (id) => {
-        const confirmar = window.confirm('Tem certeza que deseja excluir esta reserva?');
+        const confirmar = window.confirm('Tem certeza que deseja excluir esse professor?');
         if (!confirmar) return;
  
         const token = localStorage.getItem('access_token');
@@ -56,7 +56,7 @@ export function Professores() {
         <h3 className={estilos.tituloDisciplina}>Professores</h3>
        <div className={estilos.topoAcoes}>
           {/* link para adicionar uma novo professor */}
-          <Link to="cadastroDisciplina" className={estilos.botaoAdicionar}>
+          <Link to="cadastroProfessores" className={estilos.botaoAdicionar}>
             <img src={add} alt="Adicionar" className={estilos.iconeAdd} />        
           </Link>
         </div>
