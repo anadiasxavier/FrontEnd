@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import  axios  from 'axios';
 import { useState, useEffect } from 'react';
 import estilos from './Cadastrar.module.css';
-
+//FAZERRRRRRRRRRRRRRRR
 const schemaDisciplinas = z.object({
     nome: z.string()
         .min(1,'Informe seu nome!')
