@@ -8,6 +8,8 @@ import { DisciplinarCadastrar } from "../Paginas/DisciplinarCadastrar";
 import { DisciplinaEditar } from "../Paginas/DisciplinaEditar";
 import { Professores } from "../Paginas/Professores";
 import { ProfessoresCadastrar } from "../Paginas/ProfessoresCadastrar";
+import { ProfessoresEditar } from "../Paginas/ProfessoresEditar";
+import { Ambientes } from"../Paginas/Ambientes";
 
 export function Rotas() {
   return (
@@ -30,7 +32,15 @@ export function Rotas() {
         <Route path="professor">  
           <Route index element ={<Professores/>}/>
             <Route path="cadastroProfessores" element={<ProfessoresCadastrar/>}/>
-          
+            <Route path="Editar/:id" element={<ProfessoresEditar/>} />
+        </Route>
+
+        {/* Ambientes */}
+        <Route path="ambientes">
+          <Route index element ={<Ambientes/>}>
+
+          </Route>
+
         </Route>
       
       </Route>

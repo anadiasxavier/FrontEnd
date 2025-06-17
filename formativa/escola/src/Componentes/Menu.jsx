@@ -25,8 +25,10 @@ export function Menu(){
                             </Link>
                         </td>
                         <td className={estilos.tdMenu}>
-                            <img src={ambiente} ></img>
-                           <label>Ambiente</label> 
+                            <Link to="/inicial/ambientes">
+                                <img src={ambiente} ></img>
+                                <label>Ambiente</label> 
+                           </Link>
                         </td>
                     </tr>
 
