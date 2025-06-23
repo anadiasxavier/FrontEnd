@@ -74,14 +74,14 @@ export function AmbientesEditar() {
                 }
             );
  
-            console.log('Sala editada com sucesso!', response.data);
-            alert('Reserva editada com sucesso!');
+            console.log('Ambiente editado com sucesso!', response.data);
+            alert('Ambiente editado com sucesso!');
             reset();
             navigate('/inicial/ambientes');
  
         } catch (error) {
-            console.error('Erro ao editar reserva', error);
-            alert("Erro ao editar reserva");
+            console.error('Erro ao editar ambiente', error);
+            alert("Erro ao editar ambiente");
         }
     }
  

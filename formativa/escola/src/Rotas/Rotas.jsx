@@ -15,6 +15,10 @@ import { AmbientesEditar } from "../Paginas/AmbientesEditar";
 import { Gestor } from "../Paginas/Gestor";
 import { GestorCadastrar } from "../Paginas/GestorCadastrar";
 import { GestorEditar } from "../Paginas/GestorEditar";
+import { Reserva } from "../Paginas/reserva";
+import { ReservaCadastrar } from "../Paginas/ReservaCadastrar";
+import { ReservaEditar } from "../Paginas/ReservaEditar";
+import { ReservaProf } from "../Paginas/ReservaProf";
 
 export function Rotas() {
   return (
@@ -26,6 +30,7 @@ export function Rotas() {
       <Route path="/Inicial" element={<Inicial />} >
         <Route index element={<Menu />} />
         <Route path="discProfessor" element={<DisciplinasProfessor />} />
+        <Route path="reservaProfessor" element={<ReservaProf />} />
 
         {/* disciplina */}
         <Route path="disciplina">
@@ -55,8 +60,12 @@ export function Rotas() {
           <Route path="Editar/:id" element={<GestorEditar/>} />
         </Route>
 
-
-
+        {/* Reservas */}
+        <Route path="reserva">
+          <Route index element={<Reserva />} />
+          <Route path="ReservaCadastrar" element={<ReservaCadastrar/>} />
+          <Route path="Editar/:id" element={<ReservaEditar/>} />
+        </Route>
 
       </Route>
     </Routes>
