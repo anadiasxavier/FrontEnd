@@ -15,38 +15,41 @@ export function Menu(){
     return(
         <div className={estilos.conteiner}>
             <table className={estilos.tableMenu}>
-                {/* tr sao as linhas, td celulas dentro da linha */}
-                <tbody>
-                    <tr>
-                        <td className={estilos.tdMenu}>
-                            <Link to={linkDisciplina}>
-                                <img src={disciplina} />
-                                <label alt= 'Disciplinas do professor'>Disciplinas</label> 
-                            </Link>
-                        </td>
-                        <td className={estilos.tdMenu}>
-                            <Link to="/inicial/ambientes">
-                                <img src={ambiente} ></img>
-                                <label>Ambiente</label> 
-                           </Link>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td className={estilos.tdMenu}>
-                            <Link  to="/inicial/professor">
-                                <img src={professor} />
-                                <label>Professores</label> 
-                           </Link>  
-                        </td>
-                        <td className={estilos.tdMenu}>
-                            <img src={gestor} ></img>
-                             <label>Gestores</label>  
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        
+        <tbody>
+            <tr>
+            <td className={estilos.tdMenu}>
+                <Link to={linkDisciplina}>
+                <img src={disciplina} />
+                <label>Disciplinas</label> 
+                </Link>
+            </td>
+            <td className={estilos.tdMenu}>
+                <Link to="/inicial/ambientes">
+                <img src={ambiente} />
+                <label>Ambiente</label> 
+                </Link>
+            </td>
+            <td className={estilos.tdMenu}>
+                <Link to="/inicial/professor">
+                <img src={professor} />
+                <label>Professores</label> 
+                </Link>  
+            </td>
+            <td className={estilos.tdMenu}>
+                <Link to="/inicial/gestores">
+                <img src={gestor} />
+                <label>Gestores</label>  
+                </Link>  
+            </td>
+            <td className={estilos.tdMenu}>
+                <Link to="/inicial/gestores">
+                <img src={gestor} />
+                <label>Gestores</label>  
+                </Link>  
+            </td>
+            </tr>
+        </tbody>
+        </table>
         </div>
     )
 }

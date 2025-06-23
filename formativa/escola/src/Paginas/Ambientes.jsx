@@ -74,7 +74,7 @@ export function Ambientes() {
         <h3 className={estilos.tituloDisciplina}>Ambientes</h3>
        <div className={estilos.topoAcoes}>
           {/* link para adicionar um novo ambiente */}
-          <Link to="cadastroDisciplina" className={estilos.iconeAdd}>
+          <Link to="AmbientesCadastrar" className={estilos.iconeAdd}>
             <img src={add} alt="Adicionar" className={estilos.iconeAdd} />        
           </Link>
         </div>
@@ -96,7 +96,7 @@ export function Ambientes() {
                   <td>{sala.capacidade_alunos}</td>
                   <td className={estilos.acoes}>
                     {/* Passo para o "param" o id do item que posso editar e excluir */}
-                   <Link to={`/inicial/disciplina/editar/${sala.id}`}>
+                   <Link to={`/inicial/ambientes/editar/${sala.id}`}>
                       <img src={edit} className={estilos.icone}/>
                     </Link>
                     <img src={deletar} alt="Excluir" className={estilos.icone}
