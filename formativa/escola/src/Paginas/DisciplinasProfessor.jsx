@@ -33,7 +33,7 @@ export function DisciplinasProfessor (){
                         <h3 className={estilos.nome}>{disciplina.nome}</h3>
                         <p><strong>Curso:</strong>{disciplina.curso}</p>
                         <p><strong>Descrição:</strong>{disciplina.descricao}</p>
-                        <p><strong>Carga horário:</strong>{disciplina.carga_horaria}</p>
+                        <p><strong>Carga horária:</strong>{disciplina.carga_hora}</p>
                     </div>
                 ))}
             </div>

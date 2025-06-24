@@ -55,7 +55,7 @@ export function ReservaProf() {
   }
 
   return (
-    <div className={estilos.containerCard}>
+    <div className={estilos.conteinerCard}>
       <h2 className={estilos.tituloCard}>Minhas Reservas</h2>
       <div className={estilos.listaCard}>
         {reservas.map(reserva => {
@@ -67,7 +67,7 @@ export function ReservaProf() {
 
           return (
             <div key={reserva.id} className={estilos.card}>
-              <h3 className={estilos.nome}>Sala: {nomeSala}</h3>
+              <h3 className={estilos.nome}>Sala: {salas[reserva.sala_reserva] || reserva.sala_reserva}</h3>
               <p><strong>Professor: </strong>{username}</p>
               <p><strong>Disciplina: </strong>{disciplinas[reserva.disciplina]}</p>
               <p><strong>Período: </strong>{periodoDisplay(reserva.periodo)}</p>
