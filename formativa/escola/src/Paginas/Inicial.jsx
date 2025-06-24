@@ -1,5 +1,6 @@
 import { Cabecalho } from "../Componentes/Cabecalho";
 import { Outlet, useLocation } from "react-router-dom";
+import { Rodape } from "../Componentes/Rodape";
 import banner from "../assets/banner.png";
 import estilos from "./Inicial.module.css";
 import criancas from '../assets/criancas.png'; 
@@ -14,7 +15,7 @@ export function Inicial() {
       <Cabecalho />
       
       {/* esse location.pathname faz aparecer somente na página inicial */}
-      {location.pathname === "/inicial/" && (
+      {location.pathname === "/inicial" && (
         <div className={estilos.banner}>
           <img src={banner} alt="Banner de volta às aulas" />
         </div>
@@ -22,7 +23,7 @@ export function Inicial() {
 
       <Outlet />
 
-      {location.pathname === "/inicial/" &&(
+      {location.pathname === "/inicial" &&(
         <div className={estilos.pagina}>
         <section className={estilos.sobreNos}>
             <div className={estilos.texto}>
@@ -61,7 +62,10 @@ export function Inicial() {
             </div>
         </section>
     </div>
+
+       
       )}
+       <Rodape />
     </>
   );
 }

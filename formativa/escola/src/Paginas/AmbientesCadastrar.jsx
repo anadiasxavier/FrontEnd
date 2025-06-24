@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import estilos from './Cadastrar.module.css';
 
+// definindo o esquema de validação usando o Zod
 const schemaAmbientes = z.object({
   nome: z.string()
     .min(1, 'Informe o nome!')
@@ -29,9 +30,10 @@ export function AmbientesCadastrar() {
     resolver: zodResolver(schemaAmbientes)
   });
 
+  //Funcao para enviar os dados validados
   async function envioData(data) {
     console.log("Dados para enviar:", data);
-
+    //pega o token
     const token = localStorage.getItem('access_token');
     if (!token) {
       alert("Usuário não autenticado!");
@@ -39,6 +41,7 @@ export function AmbientesCadastrar() {
     }
 
     try {
+      //para criar um criar ambiente
       const response = await axios.post('http://127.0.0.1:8000/api/sala/', data, {
         headers: {
           Authorization: `Bearer ${token}`,

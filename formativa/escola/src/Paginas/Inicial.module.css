@@ -18,8 +18,9 @@
   font-family: 'Inter', sans-serif;
   padding: 40px;
   color: #2c2c2c;
-   margin-left: 145px;
-  margin-right: 145px;
+   margin-left: 200px;
+  margin-right: 200px;
+
 }
 
 .sobreNos {
@@ -49,9 +50,8 @@
 }
 
 .imagemCriancas img {
-  width: 500px;
-  margin-top: 50px;
-}
+  width: 700px;
+  margin-top: px;}
 
 .equipe h2 {
   color: #1B1A51;
@@ -70,8 +70,8 @@
 }
 
 .card img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 10px;
 }
 
@@ -87,10 +87,10 @@
 .textoEquipe {
   flex: 1;
   max-width: 550px;
-  margin-left: 30vh;
+  margin-left: 25vh;
 }
 
 .textoEquipe p {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
 }

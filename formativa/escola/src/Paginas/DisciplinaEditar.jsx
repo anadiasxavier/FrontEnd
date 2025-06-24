@@ -5,7 +5,8 @@ import axios from 'axios';
 import estilos from './Cadastrar.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
- 
+
+// esquema de validacao
 const schemaDisciplina = z.object({
     nome: z.string()
         .min(1, 'Informe ao menos um caractere')
@@ -40,7 +41,8 @@ export function DisciplinaEditar() {
     } = useForm({
         resolver: zodResolver(schemaDisciplina)
     });
- 
+    
+    // carrega os dados
     useEffect(() => {
         async function buscarProfessores() {
             try {
@@ -65,7 +67,8 @@ export function DisciplinaEditar() {
         }
         buscarProfessores();
     }, []);
- 
+    
+    //enviar os dados editados 
     async function obterDadosFormulario(data) {
       console.log("Dados do formulário:", data);
         try {

@@ -1,71 +1,68 @@
-.conteinerLogin{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15vh;
-    
+.conteinerLogin {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5; 
+  font-family: Arial, sans-serif;
 }
 
-.boxLogin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 502px;
-    width: 500px;
-    background-color: #393874;
+.boxLogin {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(57, 56, 116, 0.3); /* sombra com a cor base */
+  width: 450px;
+  height: 300px;
 }
 
-.loginForm{
-    height: auto;
-    padding: 30px;
-    border-radius:15px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0);
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-
+.titulo {
+  margin-bottom: 25px;
+  color: #393874;
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
 }
 
-.titulo{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 25px;
-    margin-top:40px ;
+.loginForm {
+  display: flex;
+  flex-direction: column;
 }
 
-
-.inputField{
-    height: 50px;
-    font-size: 16px;
-    color: #393874;
-    background-color: #EEEEEE;
-    width: 370px;
-    box-sizing: border-box;
-    margin-bottom: 27px;
-    align-items: center;
-    display: flex;
+.inputField {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
 }
 
-
-
-.submitButton{
-    width: 350px;
-    height: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #FF7070;
-    font-size: 16px;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.inputField:focus {
+  border-color: #393874;
+  outline: none;
+  box-shadow: 0 0 5px #393874;
 }
 
+.submitButton {
+  padding: 12px;
+  background-color: #393874;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
 
-.error{
-    color: #dc3545;
-    font-size: 13px;
-    margin-top: 5px;
+.submitButton:hover {
+  background-color: #2e2b61;
+}
+
+.error {
+  color: #d9534f; 
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }

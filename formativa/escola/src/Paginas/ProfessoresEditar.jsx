@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import estilos from './Cadastrar.module.css';
 import { useParams, useNavigate } from 'react-router-dom';
 
+// esquema de validacao
 const schemaProfessores = z.object({
     username: z.string()
         .min(5, 'Informe o seu username!')
@@ -31,6 +32,7 @@ const schemaProfessores = z.object({
         .regex(/^\(\d{2}\)\s?\d{4,5}-\d{4}$/, 'Informe um telefone válido com DDD'),
 });
 
+// componente para editar dados de professores
 export function ProfessoresEditar() {
     const [professores, setProfessores] = useState([]);
     const { id } = useParams();
@@ -44,10 +46,12 @@ export function ProfessoresEditar() {
     } = useForm({
         resolver: zodResolver(schemaProfessores),
     });
-
+    
+    // busca dados do professor pelo id
     useEffect(() => {
         async function buscarProfessores() {
             try {
+                //Busca todos os professores
                 const token = localStorage.getItem('access_token');
                 const response = await axios.get('http://127.0.0.1:8000/api/usuario/', {
                     headers: {
@@ -55,7 +59,7 @@ export function ProfessoresEditar() {
                     },
                 });
                setProfessores(response.data);
-                //Preenche o formulários com os dados do registro do ID
+                //Busca todos os professor expercifico
                  const resProfessor = await axios.get(`http://127.0.0.1:8000/api/usuario/${id}/`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
@@ -70,6 +74,7 @@ export function ProfessoresEditar() {
         buscarProfessores();
     }, []);
 
+    //enviar os dados editados
     async function obterDadosFormulario(data) {
         console.log("Dados do formulário:", data);
 

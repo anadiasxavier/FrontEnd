@@ -3,6 +3,7 @@ import ambiente from '../assets/ambientes.png';
 import disciplina from '../assets/disciplinas.png';
 import professor from '../assets/professor.png';
 import gestor from '../assets/gestor.png';
+import calendario from '../assets/calendario.png';
 import { Link } from 'react-router-dom';
 
 export function Menu() {
@@ -25,7 +26,7 @@ export function Menu() {
 
             <td className={estilos.tdMenu}>
               <Link to={`/inicial/${linkReserva}`}>
-                <img src={gestor} alt="Reservas" />
+                <img src={calendario} alt="Reservas" />
                 <label>Reserva</label>
               </Link>
             </td>

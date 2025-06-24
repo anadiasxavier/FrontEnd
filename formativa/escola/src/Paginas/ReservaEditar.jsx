@@ -5,7 +5,8 @@ import axios from 'axios';
 import estilos from './Cadastrar.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
- 
+
+// esquema de validacao
 const schemaReserva = z.object({
     professor: z.number({ 
         invalid_type_error: 'Selecione o professor.' 
@@ -23,8 +24,10 @@ const schemaReserva = z.object({
     data_inicio: z.string().min(1, 'Informe a data de início'),
     data_termino: z.string().min(1, 'Informe a data de término'),
     });
- 
+
+
 export function ReservaEditar() {
+    // configuração do formulario
     const navigate = useNavigate();
     const { id } = useParams();
     const [professores, setProfessores] = useState([]);
@@ -39,7 +42,8 @@ export function ReservaEditar() {
     } = useForm({
         resolver: zodResolver(schemaReserva)
     });
- 
+    
+  //busca os dados
   useEffect(() => {
     const token = localStorage.getItem('access_token');
 
@@ -72,7 +76,8 @@ export function ReservaEditar() {
 
     buscarDados();
   }, [id, reset])
- 
+
+    // Envia os dados editados
     async function envioData(data) {
       console.log("Dados do formulário:", data);
         try {
@@ -99,7 +104,8 @@ export function ReservaEditar() {
             alert("Erro ao editar reserva");
         }
     }
- 
+  
+    // Formulário de edição
    return (
          <div className={estilos.conteiner}>
              <form className={estilos.loginForm} onSubmit={handleSubmit(envioData)}>

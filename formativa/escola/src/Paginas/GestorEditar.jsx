@@ -6,6 +6,8 @@ import estilos from './Cadastrar.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+
+// esquema de validacao
 const schemaGestor = z.object({
   username: z.string().min(3, 'Informe o username com no mínimo 3 caracteres').max(100, 'Máximo 100 caracteres'),
   first_name: z.string().min(3, 'Informe o nome com no mínimo 3 caracteres').max(100, 'Máximo 100 caracteres'),
@@ -31,6 +33,7 @@ export function GestorEditar() {
     resolver: zodResolver(schemaGestor)
   });
 
+  // carrega os dados
   useEffect(() => {
     async function buscarGestor() {
       try {
@@ -41,6 +44,7 @@ export function GestorEditar() {
           headers: { Authorization: `Bearer ${token}` }
         });
 
+        // Preenche o formulário
         reset(resGestor.data);
         setGestor(resGestor.data);
 
@@ -51,6 +55,7 @@ export function GestorEditar() {
     buscarGestor();
   }, [id, reset]);
 
+  //enviar os dados editados
   async function obterDadosFormulario(data) {
     try {
       const token = localStorage.getItem('access_token');

@@ -65,7 +65,7 @@ export function Reserva() {
 
         const token = localStorage.getItem('access_token');
 
-        axios.delete(`http://127.0.0.1:8000/api/reserva/${id}/`, {
+        axios.delete(`http://127.0.0.1:8000/api/reservas/${id}/`, {
             headers: { 'Authorization': `Bearer ${token}` }
         })
         .then(() => {

@@ -5,7 +5,8 @@ import axios from 'axios';
 import estilos from './Cadastrar.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
- 
+
+// esquema de validacao
 const schemaAmbientes = z.object({
   nome: z.string()
     .min(1, 'Informe o nome!')
@@ -33,6 +34,7 @@ export function AmbientesEditar() {
         resolver: zodResolver(schemaAmbientes)
     });
  
+    // carrega os dados
     useEffect(() => {
         async function buscarAmbientes() {
             try {
@@ -58,6 +60,7 @@ export function AmbientesEditar() {
         buscarAmbientes();
     }, []);
  
+    //enviar os dados editados 
     async function obterDadosFormulario(data) {
       console.log("Dados do formulário:", data);
         try {

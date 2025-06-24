@@ -5,6 +5,7 @@ import  axios  from 'axios';
 import { useState, useEffect } from 'react';
 import estilos from './Cadastrar.module.css';
 
+// esquema de validacao
 const schemaDisciplinas = z.object({
     nome: z.string()
         .min(1,'Informe seu nome!')
@@ -19,16 +20,16 @@ const schemaDisciplinas = z.object({
     descricao: z.string()
         .min(1, 'informe a descrição')
         .max(255, ' informe no maximo  255 caracteres'),
-    // professor: z.string(
-    //     {invalid_type_error: 'selecione um professor!'})
-    //     .min(1, "selecione um professor")
     professor: z.number({ invalid_type_error: 'selecione um professor!' })
     .int()
     .min(1)
 });
 
+
 export function DisciplinarCadastrar(){
     const [professores, setprofessores] = useState([]);
+
+
     const{
         register,
         handleSubmit,
@@ -38,6 +39,7 @@ export function DisciplinarCadastrar(){
         resolver: zodResolver(schemaDisciplinas)
     });
 
+    //busca o professor no backend
     useEffect(()=>{
         async function buscarProfessores() {
             try{
@@ -47,6 +49,7 @@ export function DisciplinarCadastrar(){
                         'Authorization': `Bearer ${token}`
                     }
                 });
+                // filtra apenas os usuários com tipo P
                 const professoresFiltrados = response.data.filter(user => user.tipo === 'P');
                 setprofessores(professoresFiltrados);
             }catch(error){
@@ -56,6 +59,7 @@ export function DisciplinarCadastrar(){
         buscarProfessores()
     },[])
 
+    // envia os dados preenchidos no formulario
     async function obterDadosFormulario(data) {
         console.log("dados do formulario", data);
 
